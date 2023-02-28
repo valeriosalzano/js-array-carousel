@@ -13,6 +13,9 @@ html {
 .d-none {
     display: none;
 }
+.d-flex {
+    display: flex;
+}
 .arrow {
     position: absolute;
     left: 50%;
@@ -24,22 +27,27 @@ html {
     text-align: center;
     background-color: lightgray;
     color: black;
+    z-index: 2;
 }
 
 /* style  */
+.main-container {
+    width: 90%;
+    height: 70vh;
+    margin: 15vh auto;
+}
 .slider-container {
     position: relative;
-    margin: 10vh auto;
-    width: 70vw;
-    height: 80vh;
+    width: 80%;
+    height: 100%;
 }
 
 #prev-arrow {
-    top: 1rem;
+    top: 0.5rem;
 }
 
 #next-arrow {
-    bottom: 1rem;
+    bottom: 0.5rem;
 }
 
 .slider {
@@ -55,4 +63,29 @@ html {
 
 .slider-container .showed {
     display: block;
+}
+
+.thumbnails-container {
+    position: relative;
+    height: 100%;
+    width: 20%;
+}
+
+.thumbnails {
+    height: 100%;
+}
+
+.thumbnails img {
+    object-fit: cover;
+    height: calc(100% / 5);
+    width: 100%;
+    display: block;
+    background-color: black;
+    filter: opacity(0.3);
+}
+
+
+img.highlight {
+    filter: opacity(1);
+    border: 2px solid lightgray;
 }
