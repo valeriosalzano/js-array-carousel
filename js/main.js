@@ -24,15 +24,13 @@ const prevArrow = document.getElementById("prev-arrow");
 prevArrow.addEventListener('click',
     function(){
         sliderContent[current].classList.remove("showed");
-        current--;
-        sliderContent[current].classList.add("showed");
-        
-        // hide/display arrows 
-        if(current == 0){
-            prevArrow.classList.add("d-none")
-        }else if(current == sliderContent.length - 2){
-            nextArrow.classList.remove("d-none")
+        // ciclo infinito
+        if (current == 0){
+            current = sliderContent.length - 1;
+        } else {
+            current--;
         }
+        sliderContent[current].classList.add("showed");
     }
 )
 
@@ -41,14 +39,12 @@ const nextArrow = document.getElementById("next-arrow");
 nextArrow.addEventListener('click',
     function(){
         sliderContent[current].classList.remove("showed");
-        current++;
-        sliderContent[current].classList.add("showed");
-
-        // hide/display arrows 
-        if(current == sliderContent.length-1){
-            nextArrow.classList.add("d-none")
-        }else if(current == 1){
-            prevArrow.classList.remove("d-none")
+        // ciclo infinito
+        if (current == sliderContent.length - 1){
+            current = 0;
+        } else {
+            current++;
         }
+        sliderContent[current].classList.add("showed");
     }
 )
