@@ -9,10 +9,37 @@ html {
     color: white;
 }
 
+/* utility */
+.d-none {
+    display: none;
+}
+.arrow {
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%;
+    line-height: 2rem;
+    text-align: center;
+    background-color: lightgray;
+    color: black;
+}
+
+/* style  */
 .slider-container {
+    position: relative;
     margin: 10vh auto;
-    width: 50vw;
+    width: 70vw;
     height: 80vh;
+}
+
+#prev-arrow {
+    top: 1rem;
+}
+
+#next-arrow {
+    bottom: 1rem;
 }
 
 .slider {
@@ -26,6 +53,6 @@ html {
     display: none;
 }
 
-.slider-container .current {
+.slider-container .showed {
     display: block;
 }

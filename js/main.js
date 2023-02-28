@@ -16,5 +16,39 @@ sliderDom.innerHTML = sliderPrint;
 // creo un array che contenga i collegamenti ai tag img di slider 
 const sliderContent = document.querySelectorAll("img");
 // rendo visibile la prima immagine
-sliderContent[0].classList.add("current");
+let current = 0;
+sliderContent[current].classList.add("showed");
 
+// prev arrow
+const prevArrow = document.getElementById("prev-arrow");
+prevArrow.addEventListener('click',
+    function(){
+        sliderContent[current].classList.remove("showed");
+        current--;
+        sliderContent[current].classList.add("showed");
+        
+        // hide/display arrows 
+        if(current == 0){
+            prevArrow.classList.add("d-none")
+        }else if(current == sliderContent.length - 2){
+            nextArrow.classList.remove("d-none")
+        }
+    }
+)
+
+// next arrow
+const nextArrow = document.getElementById("next-arrow");
+nextArrow.addEventListener('click',
+    function(){
+        sliderContent[current].classList.remove("showed");
+        current++;
+        sliderContent[current].classList.add("showed");
+
+        // hide/display arrows 
+        if(current == sliderContent.length-1){
+            nextArrow.classList.add("d-none")
+        }else if(current == 1){
+            prevArrow.classList.remove("d-none")
+        }
+    }
+)
